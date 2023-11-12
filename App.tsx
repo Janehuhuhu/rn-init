@@ -12,7 +12,8 @@ import { View } from 'react-native';
 // import Index from './src/components/Animated';
 // import Index from './src/components/webview';
 // import Index from './src/components/picker';
-import Index from './src/components/swiper';
+// import Index from './src/components/swiper';
+import Index from './src/components/asyncStorage';
 
 function App(): JSX.Element {
   return (
