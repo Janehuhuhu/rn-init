@@ -30,9 +30,27 @@ const componentName = () => {
   const Stack = createStackNavigator();
 
   return (
-    <Stack.Navigator initialRouteName="Home">
-      <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="News" component={News} />
+    <Stack.Navigator
+      initialRouteName="Home"
+      screenOptions={{
+        headerMode: 'screen',
+        headerTintColor: 'white',
+        headerStyle: { backgroundColor: 'tomato' },
+      }}>
+      <Stack.Screen
+        options={{
+          title: '首页',
+        }}
+        name="Home"
+        component={Home}
+      />
+      <Stack.Screen
+        options={{
+          title: '新闻页',
+        }}
+        name="News"
+        component={News}
+      />
     </Stack.Navigator>
   );
 };
