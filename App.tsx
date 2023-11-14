@@ -18,7 +18,9 @@ import { NavigationContainer } from '@react-navigation/native';
 // import Index from './src/components/asyncStorage';
 // import Index from './src/components/geolocation';
 // import Index from './src/components/camera';
-import Index from './src/components/navigation/stack';
+// import Index from './src/components/navigation/stack';
+// import Index from './src/components/navigation/drawer';
+import Index from './src/components/navigation/bottomTab';
 
 function App(): JSX.Element {
   return (
