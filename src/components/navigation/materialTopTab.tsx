@@ -1,9 +1,8 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Button } from 'react-native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Icon from 'react-native-vector-icons/Ionicons';
+import { Text, View, StyleSheet } from 'react-native';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
-const Tab = createBottomTabNavigator();
+const Tab = createMaterialTopTabNavigator();
 
 const Home = () => {
   return (
@@ -24,28 +23,20 @@ const News = () => {
 const componentName = () => {
   return (
     <Tab.Navigator
+      tabBarPosition={'bottom'}
       screenOptions={{
         tabBarActiveTintColor: '#e91e63',
+        tabBarLabelStyle: { fontSize: 15 },
+        tabBarItemStyle: { width: 200 },
+        tabBarStyle: { backgroundColor: 'powderblue' },
       }}>
       <Tab.Screen
-        options={{
-          title: '首页',
-          tabBarIcon: ({ focused, color, size }) => {
-            return <Icon name="ios-book" size={size} color={color} />;
-          },
-        }}
+        options={{ tabBarLabel: '首页' }}
         name="Home"
         component={Home}
       />
       <Tab.Screen
-        options={{
-          title: '新闻页',
-          tabBarIcon: ({ focused, color, size }) => {
-            return (
-              <Icon name="accessibility-outline" size={size} color={color} />
-            );
-          },
-        }}
+        options={{ tabBarLabel: '新闻页' }}
         name="News"
         component={News}
       />
@@ -57,7 +48,7 @@ export default componentName;
 
 const styles = StyleSheet.create({
   container: {
-    height: '100%',
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
