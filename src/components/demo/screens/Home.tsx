@@ -6,8 +6,10 @@ import {
   TouchableOpacity,
   ScrollView,
   Dimensions,
+  Image,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import Swiper from 'react-native-swiper';
 
 const componentName = () => {
   useEffect(() => {
@@ -41,6 +43,32 @@ const componentName = () => {
           </TouchableOpacity>
         </View>
       </ScrollView>
+      <View
+        style={{
+          height: 180,
+          backgroundColor: '#ccc',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+        <Swiper
+          style={{
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+            <Image
+              source={require('../imgs/1.png')}
+              style={{ resizeMode: 'contain', height: 180 }}
+            />
+          </View>
+          <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+            <Image
+              source={require('../imgs/2.png')}
+              style={{ resizeMode: 'contain', height: 180 }}
+            />
+          </View>
+        </Swiper>
+      </View>
     </View>
   );
 };
