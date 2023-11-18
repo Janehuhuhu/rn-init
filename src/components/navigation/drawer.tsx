@@ -1,43 +1,53 @@
-// import * as React from 'react';
-// import { Text, View, StyleSheet } from 'react-native';
-// import { createDrawerNavigator } from '@react-navigation/drawer';
+import * as React from 'react';
+import { Text, View, StyleSheet } from 'react-native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
-// const Home = ({ navigation }) => {
-//   return (
-//     <View style={styles.container}>
-//       <Text>Home Screen</Text>
-//       {/* <Button
-//         title="跳转到News页"
-//         onPress={() => navigation.navigate('News')}
-//       /> */}
-//     </View>
-//   );
-// };
+const Drawer = createDrawerNavigator();
 
-// const News = ({ navigation }) => {
-//   return (
-//     <View style={styles.container}>
-//       <Text>News Screen</Text>
-//       {/* <Button
-//         title="跳转到Home页"
-//         onPress={() => navigation.navigate('Home')}
-//       /> */}
-//     </View>
-//   );
-// };
+const Home = () => {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Home Screen</Text>
+    </View>
+  );
+};
 
-// const componentName = () => {
-//   const Drawer = createDrawerNavigator();
-//   return (
-//     <Drawer.Navigator initialRouteName="Home">
-//       <Drawer.Screen name="Home" component={Home} />
-//       <Drawer.Screen name="News" component={News} />
-//     </Drawer.Navigator>
-//   );
-// };
+const News = () => {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>News Screen</Text>
+    </View>
+  );
+};
 
-// export default componentName;
+function Profile() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Profile Screen</Text>
+    </View>
+  );
+}
 
-// const styles = StyleSheet.create({
-//   container: {},
-// });
+const componentName = () => {
+  return (
+    <Drawer.Navigator initialRouteName="Home">
+      <Drawer.Screen
+        options={{ drawerLabel: '首页' }}
+        name="Home"
+        component={Home}
+      />
+      <Drawer.Screen name="News" component={News} />
+      <Drawer.Screen
+        name="Profile"
+        component={Profile}
+        options={{ drawerLabel: 'Profile' }}
+      />
+    </Drawer.Navigator>
+  );
+};
+
+export default componentName;
+
+const styles = StyleSheet.create({
+  container: {},
+});
