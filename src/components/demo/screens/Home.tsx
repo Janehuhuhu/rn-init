@@ -16,7 +16,7 @@ const componentName = () => {
 
   return (
     <View style={styles.container}>
-      <ScrollView>
+      <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
         <View
           style={{
             height: 80,
